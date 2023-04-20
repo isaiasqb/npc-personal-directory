@@ -1,0 +1,115 @@
+{
+  "npcs": [
+    {
+      "id": "0",
+      "name": "Boroboro",
+      "race": "orc",
+      "location": "dark harbor",
+      "personalityTraits": [
+        "hungry",
+        "impatient",
+        "angry"
+      ]
+    },
+    {
+      "id": "1",
+      "name": "Spindle",
+      "race": "halfling",
+      "location": "sunny valley",
+      "personalityTraits": [
+        "goofy",
+        "kind",
+        "anxious"
+      ]
+    },
+    
+{
+  "id": "3",
+  "name": "Eryka",
+  "race": "fairy",
+  "location": "weeping woods",
+  "personalityTraits": [
+  "quirky",
+  "rash",
+  "smart"
+  ]
+  },
+  {
+  "id": "3",
+  "name": "Noelio",
+  "race": "werewolf",
+  "location": "weeping woods",
+  "personalityTraits": [
+  "coward",
+  "curious",
+  "generous"
+  ]
+  },
+  {
+  "id": "4",
+  "name": "Lorennia",
+  "race": "mermaid",
+  "location": "purple dawn river",
+  "personalityTraits": [
+  "loving",
+  "goofy",
+  "smart"
+  ]
+  },
+  {
+  "id": "5",
+  "name": "Marcyon",
+  "race": "owl-man",
+  "location": "howling cliffs",
+  "personalityTraits": [
+    "calm",
+    "reflective",
+    "serious"
+  ]
+  },
+  {
+  "id": "6",
+  "name": "Boddin",
+  "race": "halfling",
+  "location": "sunny valley",
+  "personalityTraits": [
+  "nervious",
+  "hungry",
+  "cynical"
+  ]
+  },
+  {
+  "id": "7",
+  "name": "Cassiena",
+  "race": "mermaid",
+  "location": "purple dawn river",
+  "personalityTraits": [
+  "cruel",
+  "deceitful",
+  "disorganized"
+  ]
+  },
+  {
+  "id": "8",
+  "name": "Riax",
+  "race": "werewolf",
+  "location": "herbivore",
+  "personalityTraits": [
+  "disobedient",
+  "disorganized",
+  "erratic"
+  ]
+  },
+  {
+  "id": "9",
+  "name": "Tamarai",
+  "race": "goblin",
+  "location": "dark harbor",
+  "personalityTraits": [
+  "hungry",
+  "lazy",
+  "sloppy"
+  ]
+  }
+  ]
+}
