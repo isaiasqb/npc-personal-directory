@@ -1,0 +1,24 @@
+{
+  "name": "npc-personal-directory",
+  "version": "1.0.0",
+  "description": "This project was created in order to practice skills with for tying up front-end interface and data with a back-end server built with Express.js framework.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/isaiasqb/npc-personal-directory.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/isaiasqb/npc-personal-directory/issues"
+  },
+  "homepage": "https://github.com/isaiasqb/npc-personal-directory#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
