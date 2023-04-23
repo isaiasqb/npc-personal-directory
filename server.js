@@ -5,6 +5,11 @@ const express = require('express');
 const { npcs } = require('./data/npcs.json')
 
 
+//Heroku apps get served using port 80. here we are telling tell our app to use an environment variable.
+// When Heroku runs the app, it sets an environment variable called process.env.PORT. 
+//here we tell our app to use that port, if it has been set, and if not, default to port 3001.
+const PORT = process.env.PORT || 3001;
+
 //instantiate the server
 const app = express();
 
@@ -64,6 +69,6 @@ app.get('/api/npcs', (req, res) => {
 
 
 //tell server to listen for requests by chaining the listen() method
-app.listen(3001, () => {
+app.listen(PORT, () => {
   console.log('API server is ready and listening now on port 3001');
 });
