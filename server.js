@@ -1,5 +1,5 @@
-//address
-// http://localhost:3001/api/npcs
+const fs = require('fs');
+const path = require('path');
 
 const express = require('express');
 const { npcs } = require('./data/npcs.json')
@@ -12,6 +12,14 @@ const PORT = process.env.PORT || 3001;
 
 //instantiate the server
 const app = express();
+
+//middleware to intercept data //takes incoming POST data and converts it to key/value pairings that can be accessed in the req.body object. 
+//The extended: true option set inside the method call informs our server that there may be sub-array data nested in it as well,
+// so it needs to look as deep into the POST data as possible to parse all of the data correctly. 
+app.use(express.urlencoded({ extended: true }));
+//parse incoming JSON data
+//takes incoming POST data in the form of JSON and parses it into the req.body JavaScript object. 
+app.use(express.json())
 
 //function for filtering data through the query parameters
 //This function will take in req.query as an argument and filter through the npcs accordingly, returning the new filtered array.
@@ -55,7 +63,28 @@ function filterByQuery(query, npcsArray) {
 };
 
 
-//create a route that the front-end can request data from
+function findById(id, npcsArray) {
+  const result = npcsArray.filter(npc => npc.id === id)[0];
+  return result
+};
+
+
+function createNewNpc(body, npcsArray) {
+  //this function is to be executed at the app.post route's call back function
+  const newNpc = body;
+  npcsArray.push(newNpc);
+  fs.writeFileSync(
+    path.join(__dirname, './data/npcs.json'),
+    JSON.stringify({ npcs: npcsArray }, null, 2)
+  );
+
+  return newNpc;
+};
+
+
+
+
+//GET route fo all npcs
 app.get('/api/npcs', (req, res) => {
   let results = npcs;
 
@@ -65,6 +94,31 @@ app.get('/api/npcs', (req, res) => {
     results = filterByQuery(req.query, results)
   }
   res.json(results);
+});
+
+// GET route for requesting specific npc // xtra attention to the order of the routes. A param route must come after the other GET
+app.get('/api/npcs/:id', (req, res) => {
+  const result = findById(req.params.id, npcs);
+  if (result) {
+    res.json(result);
+  } else {
+    res.send(404)
+  }
+})
+
+//POST route, request action of a client requesting the server to accept data rather than vice versa.
+app.post('/api/npcs', (req, res) => {
+  //req.body is where the content of our data will be
+  console.log(req.body);
+
+  //set id based on the index number
+  //This method will only work as long as we don't remove any data
+  req.body.id = npcs.length.toString();
+
+  //add the new npc to the json file and the npcs array
+  const newNpc = createNewNpc(req.body, npcs)
+
+  res.json(newNpc) 
 });
 
 
