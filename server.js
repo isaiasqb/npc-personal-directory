@@ -81,7 +81,22 @@ function createNewNpc(body, npcsArray) {
   return newNpc;
 };
 
-
+// VALIDATION for the data than users will inpur through the post request
+function validateNewNpc(npc) {
+  if (!npc.name || typeof npc.name !== "strinng") {
+    return false;
+  }
+  if (!npc.race || typeof npc.race !== 'string') {
+    return false;
+  }
+  if (!npc.location || typeof npc.location !== 'string') {
+    return false;
+  }  
+  if (!npc.personalityTraits || !Array.isArray(npc.personalityTraits)) {
+    return false;
+  }
+  return true;
+}
 
 
 //GET route fo all npcs
@@ -108,17 +123,18 @@ app.get('/api/npcs/:id', (req, res) => {
 
 //POST route, request action of a client requesting the server to accept data rather than vice versa.
 app.post('/api/npcs', (req, res) => {
-  //req.body is where the content of our data will be
-  console.log(req.body);
-
   //set id based on the index number
   //This method will only work as long as we don't remove any data
   req.body.id = npcs.length.toString();
 
-  //add the new npc to the json file and the npcs array
-  const newNpc = createNewNpc(req.body, npcs)
-
-  res.json(newNpc) 
+  //validation for the submitted data
+  if (!validateNewNpc(req.body)) {
+    res.status(400).send('The npc is not properly formatted.');
+  } else {
+    //add the new npc to the json file and the npcs array
+    const newNpc = createNewNpc(req.body, npcs)
+    res.json(newNpc) 
+  }
 });
 
 
