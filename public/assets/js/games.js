@@ -3,35 +3,36 @@ const $displayArea = document.querySelector('#display-area');
 const printResults = resultArr => {
   console.log(resultArr);
 
-  const animalHTML = resultArr.map(({ id, name, age, favoriteAnimal }) => {
+  const npcHTML = resultArr.map(({ id, name, platform, releaseYear, mainNpc }) => {
     return `
   <div class="col-12 col-md-5 mb-3">
     <div class="card p-3" data-id=${id}>
       <h4 class="text-primary">${name}</h4>
-      <p>Age: ${age}<br/>
-      Favorite Animal: ${favoriteAnimal.substring(0, 1).toUpperCase() +
-        favoriteAnimal.substring(1)}<br/>
+      <h5 class="text-secondary">Released: ${releaseYear}</h5>
+      <p>Platform: ${platform}<br/>
+      Main NPC: ${mainNpc.substring(0, 1).toUpperCase() +
+        mainNpc.substring(1)}<br/>
       </p>
     </div>
   </div>
     `;
   });
 
-  $displayArea.innerHTML = animalHTML.join('');
+  $displayArea.innerHTML = npcHTML.join('');
 };
 
-const getZookeepers = () => {
-  fetch('/api/zookeepers')
+const getGames = () => {
+  fetch('/api/games')
     .then(response => {
       if (!response.ok) {
         return alert('Error: ' + response.statusText);
       }
       return response.json();
     })
-    .then(zookeeperArr => {
-      console.log(zookeeperArr);
-      printResults(zookeeperArr);
+    .then(gamesArr => {
+      console.log(gamesArr);
+      printResults(gamesArr);
     });
 };
 
-getZookeepers();
+getGames();

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>NPC Directory - NPCs</title>
+  <link href="https://fonts.googleapis.com/css?family=Karla:400,700|Rubik:400,400i,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body>
+  <header class="py-4 mb-3">
+    <div class="flex-row justify-space-between align-center container-fluid mx-auto">
+      <h1 class="text-light bg-dark p-3">NPC Directory</h1>
+      <h3 class="text-light bg-dark p-3">A Catalog For All Your Favourite NPC's</h3>
+    </div>
+  </header>
+
+  <main class="container-fluid mx-auto mb-3">
+    <section class="p-3 mb-3 bg-dark flex-row align-center">
+      <h2 class="text-light col-12 col-lg-5">The NPCs</h2>
+      <div class="col-12 col-lg-7 flex-row text-center justify-space-around align-center">
+        <a class="btn col-12 col-md-auto mx-2" href="/">Add To Your Catalog</a>
+        <a class="btn col-12 col-md-auto mx-2" href="/games">View games</a>
+      </div>
+    </section>
+
+    <section class="my-2 flex-row justify-space-between">
+      <div class="col-12 col-lg-3 bg-dark p-3">
+        <h3 class="text-light">Filter Your Search.</h3>
+        <form id="npcs-form">
+          <label for="race-input" class="form-label">Race</label>
+          <div class="flex-row justify-center">
+            <div class="col-auto mb-2">
+              <input type="radio" id="orc-input" name="race" value="orc">
+              <label for="orc-input">Orc</label>
+            </div>
+            <div class="col-auto mb-2">
+              <input type="radio" id="halfling-input" name="race" value="halfling">
+              <label for="halfling-input">Halfling</label>
+            </div>
+            <div class="col-auto mb-2">
+              <input type="radio" id="fairy-input" name="race" value="fairy">
+              <label for="fairy-input">Fairy</label>
+            </div>man
+            <div class="col-auto mb-2">
+              <input type="radio" id="werewolf-input" name="race" value="werewolf">
+              <label for="werewolf-input">Werewolf</label>
+            </div>
+            <div class="col-auto mb-2">
+              <input type="radio" id="mermaid-input" name="race" value="mermaid">
+              <label for="mermaid-input">Mermaid</label>
+            </div>
+            <div class="col-auto mb-2">
+              <input type="radio" id="owl-man-input" name="race" value="owl-man">
+              <label for="owl-man-input">Owl-man</label>
+            </div>
+            <div class="col-auto mb-2">
+              <input type="radio" id="goblin-input" name="race" value="goblin">
+              <label for="goblin-input">Goblin</label>
+            </div>
+            <div class="col-auto mb-2">
+              <input type="radio" id="demon-input" name="race" value="demon">
+              <label for="demon-input">Demon</label>
+            </div>
+            <div class="col-auto mb-2">
+              <input type="radio" id="human-input" name="race" value="human">
+              <label for="human-input">Human</label>
+            </div>
+          </div>
+          <label for="personality-input" class="form-label">Personality Traits (pick all that apply)</label>
+          <small>On macOS, use <kbd>command + click</kbd></small> <br />
+          <small>On Windows, use <kdb>ctrl + click</kdb></small>
+          <select multiple id="personality-input" class="form-input" name="personality">
+            <option value="loving">Loving</option>
+            <option value="goofy">Goofy</option>
+            <option value="serious">Serious</option>
+            <option value="hungry">Hungry</option>
+            <option value="impatient">Impatient</option>
+            <option value="angry">Angry</option>
+            <option value="kind">Kind</option>
+            <option value="anxious">Anxious</option>
+            <option value="quirky">Quirky</option>
+            <option value="Rash">Rash</option>
+            <option value="smart">Smart</option>
+            <option value="coward">Coward</option>
+            <option value="curious">Curious</option>
+            <option value="generous">Generous</option>
+            <option value="calm">Calm</option>
+            <option value="reflective">Reflective</option>
+            <option value="nervious">Nervious</option>
+            <option value="cynical">Cynical</option>
+          </select>
+
+          <button class="btn">Show NPCs</button>
+        </form>
+      </div>
+      <div class="col-12 col-lg-9 bg-dark p-3">
+
+        <div class="flex-row justify-space-between" id="display-area"></div>
+      </div>
+    </section>
+
+
+  </main>
+
+  <script src="./assets/js/npcs.js"></script>
+</body>
+
+</html>

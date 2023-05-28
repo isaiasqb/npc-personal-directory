@@ -1,11 +1,12 @@
 :root {
   --primary: #123859;
   --secondary: #419fd9;
+  --secondary: #f0d683;
   --tertiary: #03738c;
   --quaternary: #8c7503;
   --quinary: #594b02;
   --light: #ffffff;
-  --dark: #272f32;
+  --dark: #152b31;
   --border-radius: 0.3rem;
   --spacing-one: calc(1rem * 0.25);
   --spacing-two: calc(1rem * 0.5);
@@ -76,7 +77,7 @@ a {
 
 header {
   background-color: var(--primary);
-  background-image: url('../images/header-bg.jpg');
+  background-image: url('../images/npc-bg.jpg');
   background-size: cover;
   background-blend-mode: screen;
 }

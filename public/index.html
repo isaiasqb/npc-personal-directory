@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Zoo Keepr</title>
+  <title>NPC Directory</title>
   <link href="https://fonts.googleapis.com/css?family=Karla:400,700|Rubik:400,400i,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
@@ -13,12 +13,12 @@
 <body>
   <header class="py-3 mb-3">
     <div class="flex-row justify-space-between align-center container-fluid mx-auto">
-      <h1 class="text-light bg-dark p-3">Zoo Keepr</h1>
-      <h3 class="text-light bg-dark p-3">A Zoo Animal Catalog</h3>
+      <h1 class="text-light bg-dark p-3">NPC Directory</h1>
+      <h3 class="text-light bg-dark p-3">A Catalog For All Your Favourite NPC's</h3>
     </div>
     <div class="container-fluid mx-auto">
       <section class="p-3 my-4 bg-dark ">
-        <h2 class="text-light">Your guide to the wild.</h2>
+        <h2 class="text-light">All your Favourite NPC Character's Information In One Platform</h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere fugiat sint ab ut blanditiis assumenda, culpa
           alias perspiciatis, at quasi minus. Repellendus magni accusamus aliquam sunt culpa ex enim natus.</p>
       </section>
@@ -28,44 +28,76 @@
   <main class="container-fluid mx-auto">
 
     <section class="p-3 mb-3 bg-dark flex-row align-center">
-      <h2 class="text-light col-12 col-lg-5">Add To Our Catalog.</h2>
+      <h2 class="text-light col-12 col-lg-5">Add To Yur Catalog.</h2>
       <div class="col-12 col-lg-7 flex-row text-center justify-space-around align-center">
-        <a class="btn col-12 col-md-auto mx-2" href="/animals">View Animals</a>
-        <a class="btn col-12 col-md-auto mx-2" href="/zookeepers">View Zookeepers</a>
+        <a class="btn col-12 col-md-auto mx-2" href="/npcs">View NPCs</a>
+        <a class="btn col-12 col-md-auto mx-2" href="/games">View Games</a>
       </div>
     </section>
 
     <section class="my-4 flex-row justify-space-between ">
       <div class="col-12 col-lg-6 bg-dark p-3 mb-3">
-        <h3 class="text-light">Enter an Animal</h3>
-        <form id="animal-form">
-          <label for="animal-name" class="form-label">Animal Name</label>
-          <input type="text" id="animal-name" name="animal-name" class="form-input" placeholder="Enter Name">
+        <h3 class="text-light">Enter a new favourite NPC</h3>
+        <form id="npc-form">
+          <label for="npc-name" class="form-label">NPC Name</label>
+          <input type="text" id="npc-name" name="npc-name" class="form-input" placeholder="Enter Name">
 
-          <label for="species-input" class="form-label">Species</label>
-          <input type="text" id="species-input" name="species" class="form-input" placeholder="Enter Species">
+          <label for="location-input" class="form-label">Location</label>
+          <input type="text" id="location-input" name="location" class="form-input" placeholder="Enter Location">
 
-          <label for="diet-input" class="form-label">Diet</label>
+          <label for="race-input" class="form-label">Race</label>
           <div class="flex-row justify-center">
             <div class="col-auto mb-2">
-              <input type="radio" id="herbivore-input" name="diet" value="herbivore" checked>
-              <label for="herbivore-input">Herbivore</label>
+              <input type="radio" id="mermaid-input" name="race" value="mermaid" >
+              <label for="mermaid-input">Mermaid</label>
             </div>
             <div class="col-auto mb-2">
-              <input type="radio" id="folivore-input" name="diet" value="folivore">
-              <label for="folivore-input">Folivore</label>
+              <input type="radio" id="werewolf-input" name="race" value="werewolf">
+              <label for="werewolf-input">Werewolf</label>
             </div>
             <div class="col-auto mb-2">
-              <input type="radio" id="carnivore-input" name="diet" value="carnivore">
-              <label for="carnivore-input">Carnivore</label>
+              <input type="radio" id="orc-input" name="race" value="orc">
+              <label for="orc-input">Orc</label>
             </div>
             <div class="col-auto mb-2">
-              <input type="radio" id="omnivore-input" name="diet" value="omnivore">
-              <label for="omnivore-input">Omnivore</label>
+              <input type="radio" id="halfling-input" name="race" value="halfling">
+              <label for="halfling-input">Halfling</label>
             </div>
             <div class="col-auto mb-2">
-              <input type="radio" id="piscivore-input" name="diet" value="piscivore">
-              <label for="piscivore-input">Piscivore</label>
+              <input type="radio" id="fairy-input" name="race" value="fairy">
+              <label for="fairy-input">Fairy</label>
+            </div>
+            <div class="col-auto mb-2">
+              <input type="radio" id="goblin-input" name="race" value="goblin">
+              <label for="goblin-input">Goblin</label>
+            </div>
+            <div class="col-auto mb-2">
+              <input type="radio" id="demon-input" name="race" value="demon">
+              <label for="demon-input">Demon</label>
+            </div>
+            <div class="col-auto mb-2">
+              <input type="radio" id="beastling-input" name="race" value="beastling">
+              <label for="beastling-input">Beastling</label>
+            </div>
+            <div class="col-auto mb-2">
+              <input type="radio" id="human-input" name="race" value="human">
+              <label for="human-input">Human</label>
+            </div>
+            <div class="col-auto mb-2">
+              <input type="radio" id="elf-input" name="race" value="elf">
+              <label for="elf-input">Elf</label>
+            </div>
+            <div class="col-auto mb-2">
+              <input type="radio" id="dragon-input" name="race" value="dragon">
+              <label for="dragon-input">Dragon</label>
+            </div>
+            <div class="col-auto mb-2">
+              <input type="radio" id="zombie-input" name="race" value="zombie">
+              <label for="zombie-input">Zombie</label>
+            </div>
+            <div class="col-auto mb-2">
+              <input type="radio" id="dwarf-input" name="race" value="dwarf">
+              <label for="dwarf-input">Dwarf</label>
             </div>
           </div>
 
@@ -74,31 +106,52 @@
           <small>On Windows, use <kdb>ctrl + click</kdb></small>
           <select multiple id="personality-input" class="form-input" name="personality">
             <option value="hungry">Hungry</option>
-            <option value="zany">Zany</option>
+            <option value="impatient">Impatient</option>
             <option value="anxious">Anxious</option>
             <option value="loving">Loving</option>
             <option value="goofy">Goofy</option>
+            <option value="angry">Angry</option>
+            <option value="kind">Kind</option>
+            <option value="quirky">Quirky</option>
+            <option value="smart">Smart</option>
+            <option value="rash">Rash</option>
+            <option value="coward">Coward</option>
+            <option value="Curious">Curious</option>
+            <option value="reflective">Reflective</option>
+            <option value="alm">Calm</option>
+            <option value="cynical">Cynical</option>
+            <option value="cruel">Cruel</option>
+            <option value="deceitful">Deceitful</option>
+            <option value="disorganized">Disorganized</option>
+            <option value="sloppy">Sloppy</option>
+            <option value="erratic">Erratic</option>
+            <option value="lazy">Lazy</option>
+            <option value="suspicious">Suspicious</option>
           </select>
 
-          <button class="btn">Add Animal</button>
+          <button class="btn">Add NPC</button>
         </form>
       </div>
 
       <div class="col-12 col-lg-6 bg-dark p-3 mb-3">
-        <h3 class="text-light">Enter a Zookeeper</h3>
-        <form id="zookeeper-form">
-          <label for="zookeeper-name" class="form-label">Zookeeper Name</label>
-          <input type="text" id="zookeeper-name" class="form-input input" placeholder="Enter Name"
-            name="zookeeper-name">
+        <h3 class="text-light">Enter A Game</h3>
+        <form id="game-form">
+          <label for="game-name" class="form-label">game Name</label>
+          <input type="text" id="game-name" class="form-input input" placeholder="Enter Name"
+            name="game-name">
 
-          <label for="age-input" class="form-label input">Age</label>
-          <input type="number" id="age-input" class="form-input" placeholder="Enter Age" name="age">
+          <label for="game-release-year" class="form-label">Release Year</label>
+          <input type="text" id="game-release-year" class="form-input input" placeholder="Enter Release Year"
+            name="game-release-year">
 
-          <label for="favorite-animal" class="form-label">Favorite Animal</label>
-          <input type="text" class="form-input input" id="favorite-animal" placeholder="Enter Favorite Animal"
-            name="favorite-animal">
+          <label for="platform-input" class="form-label input">platform</label>
+          <input type="number" id="platform-input" class="form-input" placeholder="Enter platform" name="platform">
 
-          <button class="btn">Add Zookeeper</button>
+          <label for="favorite-npc" class="form-label">Favorite npc</label>
+          <input type="text" class="form-input input" id="favorite-npc" placeholder="Enter Favorite npc"
+            name="favorite-npc">
+
+          <button class="btn">Add game</button>
         </form>
       </div>
 

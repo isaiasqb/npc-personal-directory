@@ -1,31 +1,52 @@
-const $animalForm = document.querySelector('#animal-form');
+const $npcForm = document.querySelector('#npc-form');
 
-const handleAnimalFormSubmit = event => {
+const handleNpcFormSubmit = event => {
   event.preventDefault();
 
-  // get animal data and organize it
-  const name = $animalForm.querySelector('[name="animal-name"]').value;
-  const species = $animalForm.querySelector('[name="species"]').value;
-  const dietRadioHTML = $animalForm.querySelectorAll('[name="diet"]');
-  let diet;
+  // get npc data and organize it
+  const name = $npcForm.querySelector('[name="npc-name"]').value;
+  const location = $npcForm.querySelector('[name="location"]').value;
 
-  for (let i = 0; i < dietRadioHTML.length; i += 1) {
-    if (dietRadioHTML[i].checked) {
-      diet = dietRadioHTML[i].value;
+  const raceOptionsHTML = $npcForm.querySelectorAll('[name="race"]');
+  let race;
+
+  for (let index = 0; index < raceOptionsHTML.length; index++) {
+    if(raceOptionsHTML[index].checked) {
+      race = raceOptionsHTML[index].value;
     }
+  } 
+
+  if (race === undefined) {
+    race = '';
   }
 
-  if (diet === undefined) {
-    diet = '';
-  }
 
-  const selectedTraits = $animalForm.querySelector('[name="personality"').selectedOptions;
+  const selectedTraits = $npcForm.querySelector('[name="personality"]').selectedOptions;
   const personalityTraits = [];
   for (let i = 0; i < selectedTraits.length; i += 1) {
     personalityTraits.push(selectedTraits[i].value);
   }
-  const animalObject = { name, species, diet, personalityTraits };
+  const npcObject = { name, race, location, personalityTraits };
+
+  fetch('/api/npcs', {
+    method: 'POST',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(npcObject)
+  })
+    .then(response => {
+      if (response.ok) {
+        return response.json();
+      }
+      alert('Error: ' + response.statusText);
+    })
+    .then(postResponse => {
+      console.log(postResponse);
+      alert('You added a new NPC to the catalog!');
+    });
 
 };
 
-$animalForm.addEventListener('submit', handleAnimalFormSubmit);
+$npcForm.addEventListener('submit', handleNpcFormSubmit);
