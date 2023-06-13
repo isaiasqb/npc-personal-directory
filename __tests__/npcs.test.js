@@ -8,6 +8,9 @@ const {
 const { npcs } = require('../data/npcs.json');
 
 
+//This will prevent us from accidentally creating new npcs every time we run a test.
+jest.mock('fs'); 
+
 test("creates an npc object", () => {
   const npc = createNewNpc(
     {name: 'Dodo', id: 'twenty'}, npcs

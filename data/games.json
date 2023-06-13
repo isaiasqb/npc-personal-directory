@@ -1,0 +1,64 @@
+{
+  "games": [
+  {
+  "id": "0",
+  "name": "Rising The Wind",
+  "releaseYear": 2012,
+  "favoriteNpc": "dolphin"
+  },
+  {
+  "id": "1",
+  "name": "Ravenous Red",
+  "releaseYear": 2023,
+  "favoriteNpc": "penguin"
+  },
+  {
+  "id": "2",
+  "name": "Beautiful Disasters",
+  "releaseYear": 2017,
+  "favoriteNpc": "bear"
+  },
+  {
+  "id": "3",
+  "name": "Call of the Wild",
+  "releaseYear": 2018,
+  "favoriteNpc": "otter"
+  },
+  {
+  "id": "4",
+  "name": "Revels and Minotaurs",
+  "releaseYear": 2003,
+  "favoriteNpc": "dog"
+  },
+  {
+  "id": "5",
+  "name": "Magic Smash",
+  "releaseYear": 2022,
+  "favoriteNpc": "Sloths"
+  },
+  {
+  "id": "6",
+  "name": "Kotansu and the Samurai",
+  "releaseYear": 2000,
+  "favoriteNpc": "Quokkas"
+  },
+  {
+  "id": "7",
+  "name": "Emile and Her Tiny World",
+  "releaseYear": 2013,
+  "favoriteNpc": "Duckbilled Platypus"
+  },
+  {
+  "id": "8",
+  "name": "Dream of Poppies",
+  "releaseYear": 1999,
+  "favoriteNpc": "Business Cat"
+  },
+  {
+  "name": "Les Foilles",
+  "releaseYear": 2020,
+  "favoriteNpc": "Rabbit",
+  "id": "9"
+  }
+  ]
+  }
