@@ -1,7 +1,7 @@
-const { filterByQuery, findById, createNewNpc, validateNewNpc } = require('../../lib/npcs-lib');
-const { npcs } = require('../../data/npcs.json');
-//allows you to declare routes in any file as long as you use the proper middleware.
 const router = require('express').Router();
+const { filterByQuery, findById, createNewNpc, validateNewNpc } = require('../../lib/npcs-lib');
+const { npcs } = require('../../data/npcs');
+//allows you to declare routes in any file as long as you use the proper middleware.
 
 //GET route fo all npcs
 router.get('/npcs', (req, res) => {

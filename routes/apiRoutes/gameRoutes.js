@@ -1,10 +1,10 @@
-const router = require("express").Router();
+const router = require('express').Router();
 const {
   filterByQuery,
   findById,
   createNewGame,
   validateNewGame
-}  = require("../../lib/games-lib");
+}  = require('../../lib/games-lib');
 const { games } = require("../../data/games.json");
 
 router.get("/games", (req, res) => {
@@ -24,5 +24,20 @@ router.get("/games/:id", (req, res) => {
     res.send(404);
   }
 }); 
+
+
+router.post("/games", (req, res) => {
+  req.body.id = games.length.toString();
+
+  if(!validateNewGame(req.body)) {
+    res.status(400).send("The Game is not properly formated");
+    // res.json(games);
+  } else {
+    const game = createNewGame(req.body, games);
+    res.json(game);
+  }
+});
+
+module.exports = router
 
 

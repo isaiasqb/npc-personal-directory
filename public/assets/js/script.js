@@ -1,10 +1,11 @@
 const $npcForm = document.querySelector('#npc-form');
+const $gameForm = document.querySelector('#game-form');
 
 const handleNpcFormSubmit = event => {
   event.preventDefault();
 
   // get npc data and organize it
-  const name = $npcForm.querySelector('[name="npc-name"]').value;
+  const npcName = $npcForm.querySelector('[name="npc-name"]').value;
   const location = $npcForm.querySelector('[name="location"]').value;
 
   const raceOptionsHTML = $npcForm.querySelectorAll('[name="race"]');
@@ -26,7 +27,7 @@ const handleNpcFormSubmit = event => {
   for (let i = 0; i < selectedTraits.length; i += 1) {
     personalityTraits.push(selectedTraits[i].value);
   }
-  const npcObject = { name, race, location, personalityTraits };
+  const npcObject = { npcName, race, location, personalityTraits };
 
   fetch('/api/npcs', {
     method: 'POST',
@@ -50,3 +51,39 @@ const handleNpcFormSubmit = event => {
 };
 
 $npcForm.addEventListener('submit', handleNpcFormSubmit);
+
+
+
+// functionality for the FORM for creating a new game 
+const handleGameFormSubmit = event => {
+  event.preventDefault();
+  
+  //get the Game data and organize it
+  const gameName = $gameForm.querySelector('[name="game-name"]').value;
+  const releaseYear = parseInt($gameForm.querySelector('[name="game-release-year"]').value);
+  const favoriteNpc = $gameForm.querySelector('[name="favorite-npc"]').value;
+  
+  const gameObj = { gameName, releaseYear, favoriteNpc}
+  console.log(gameObj);
+  
+  fetch('api/games', {
+    method: 'POST',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(gameObj)
+  })
+  .then(response => {
+    if(response.ok) {
+      return response.json();
+    }
+    alert('Error: ' + response.statusText);
+  }) 
+  .then(postResponse => {
+    console.log(postResponse);
+    alert('You have added a new Game to your Catalogue!');
+  });
+};
+
+$gameForm.addEventListener('submit', handleGameFormSubmit);

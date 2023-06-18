@@ -5,7 +5,7 @@ const {
   createNewGame,
   validateNewGame,
 } = require("../lib/games-lib");
-const { games } = require("../data/games.json");
+const { games } = require("../data/games");
 
 jest.mock("fs");
 
