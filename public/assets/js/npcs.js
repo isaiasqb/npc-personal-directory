@@ -45,9 +45,9 @@ const getNpcs = (formData = {}) => {
     }
     return response.json();
   })
-  .then(npcJsonData => {
-    console.log(npcJsonData);
-    printResults(npcJsonData);
+  .then(npcData => {
+    console.log(npcData);
+    printResults(npcData);
   })
 };
 

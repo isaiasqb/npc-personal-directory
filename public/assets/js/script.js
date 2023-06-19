@@ -7,15 +7,14 @@ const handleNpcFormSubmit = event => {
   // get npc data and organize it
   const npcName = $npcForm.querySelector('[name="npc-name"]').value;
   const location = $npcForm.querySelector('[name="location"]').value;
-
   const raceOptionsHTML = $npcForm.querySelectorAll('[name="race"]');
   let race;
 
-  for (let index = 0; index < raceOptionsHTML.length; index++) {
-    if(raceOptionsHTML[index].checked) {
-      race = raceOptionsHTML[index].value;
+  for (let i = 0; i < raceOptionsHTML.length; i += 1) {
+    if (raceOptionsHTML[i].checked) {
+      race = raceOptionsHTML[i].value;
     }
-  } 
+  }
 
   if (race === undefined) {
     race = '';
@@ -27,7 +26,7 @@ const handleNpcFormSubmit = event => {
   for (let i = 0; i < selectedTraits.length; i += 1) {
     personalityTraits.push(selectedTraits[i].value);
   }
-  const npcObject = { npcName, race, location, personalityTraits };
+  const npcObject = { npcName, location, race, personalityTraits };
 
   fetch('/api/npcs', {
     method: 'POST',
@@ -50,9 +49,6 @@ const handleNpcFormSubmit = event => {
 
 };
 
-$npcForm.addEventListener('submit', handleNpcFormSubmit);
-
-
 
 // functionality for the FORM for creating a new game 
 const handleGameFormSubmit = event => {
@@ -65,7 +61,6 @@ const handleGameFormSubmit = event => {
   
   const gameObj = { gameName, releaseYear, favoriteNpc}
   console.log(gameObj);
-  
   fetch('api/games', {
     method: 'POST',
     headers: {
@@ -86,4 +81,5 @@ const handleGameFormSubmit = event => {
   });
 };
 
+$npcForm.addEventListener('submit', handleNpcFormSubmit);
 $gameForm.addEventListener('submit', handleGameFormSubmit);
